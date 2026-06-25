@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Link Auraphone Records & Griya Surya Indah Records</title>
+    <!-- Tailwind CSS untuk Desain yang Sangat Bersih & Modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Premium: MONTSERRAT sesuai permintaan Anda -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Logo Sosial Media Otomatis -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Gaya Premium Latar Belakang Gelap */
+        body {
+            background-color: #080808;
+            color: #f3f4f6;
+            font-family: 'Montserrat', sans-serif;
+            /* Mencegah seleksi teks secara tidak sengaja */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Desain Box Link dengan Efek Hover Berkelas */
+        .bio-link-card {
+            background: rgba(18, 18, 18, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bio-link-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(30, 30, 30, 0.9);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white px-4 py-12 md:py-16">
+
+    <!-- KONTEN UTAMA -->
+    <main class="max-w-2xl mx-auto w-full flex-1 flex flex-col justify-between">
+        
+        <!-- JUDUL UTAMA DI ATAS WEB -->
+        <div class="text-center mb-8">
+            <h1 class="font-display font-extrabold text-2xl tracking-wider text-white">BIO LINK</h1>
+            <div class="h-[1px] w-12 bg-neutral-800 mx-auto mt-3"></div>
+        </div>
+
+        <!-- HEADER: Sisi Kiri (Auraphone) & Sisi Kanan (Griya Surya Indah) -->
+        <header class="flex flex-col sm:flex-row justify-between items-center gap-6 border-b border-neutral-900 pb-8 mb-12">
+            
+            <!-- Sisi Kiri: Auraphone Records -->
+            <div class="flex items-center gap-3">
+                <!-- 
+                     TIPS LOGO GOOGLE DRIVE:
+                     1. Pastikan foto Anda di Google Drive diatur ke "Siapa saja yang memiliki link dapat melihat" (Public/Anyone with link).
+                     2. Salin ID file foto Anda, lalu masukkan ke format URL ini:
+                        https://lh3.googleusercontent.com/d/ID_FILE_DRIVE_ANDA
+                     3. Masukkan URL tersebut ke bagian src="..." di bawah ini.
+                -->
+                <div class="w-14 h-14 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
+                    <img src="https://placehold.co/150x150/161616/a3a3a3?text=AR" 
+                         alt="Auraphone Records Logo" 
+                         id="logo-auraphone"
+                         class="w-full h-full object-cover rounded-full"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Cadangan ikon bulat jika gambar belum dimasukkan -->
+                    <span class="hidden w-full h-full items-center justify-center text-xs font-bold text-neutral-400 bg-neutral-900 rounded-full">AR</span>
+                </div>
+                <div class="text-left">
+                    <h2 class="font-display font-bold text-xs tracking-wider text-white uppercase">Auraphone</h2>
+                    <p class="text-[9px] text-neutral-500 font-medium tracking-widest">RECORDSK</p>
+                </div>
+            </div>
+
+            <!-- Sisi Kanan: Griya Surya Indah Records -->
+            <div class="flex items-center gap-3 sm:text-right sm:flex-row-reverse">
+                <!-- 
+                     TIPS LOGO GOOGLE DRIVE:
+                     Ikuti langkah yang sama seperti logo Auraphone di atas untuk memasukkan gambar dari Google Drive Anda.
+                -->
+                <div class="w-14 h-14 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
+                    <img src="https://placehold.co/150x150/161616/a3a3a3?text=GSI" 
+                         alt="Griya Surya Indah Records Logo" 
+                         id="logo-griya-surya"
+                         class="w-full h-full object-cover rounded-full"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Cadangan ikon bulat jika gambar belum dimasukkan -->
+                    <span class="hidden w-full h-full items-center justify-center text-xs font-bold text-neutral-400 bg-neutral-900 rounded-full">GSI</span>
+                </div>
+                <div class="text-left sm:text-right">
+                    <h2 class="font-display font-bold text-xs tracking-wider text-white uppercase">Griya Surya Indah</h2>
+                    <p class="text-[9px] text-neutral-500 font-medium tracking-widest">RECORDSL</p>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- DAFTAR LINK UTAMA -->
+        <!-- 
+             CARA MENAMBAH LINK BARU:
+             Anda cukup menduplikasi / copy paste baris <a href="..."> ... </a> di bawah ini.
+             Isi:
+             1. href="LINK_TUJUAN" -> Taruh alamat linknya di sini.
+             2. Judul Link Anda -> Tulis judulnya di dalam tag <span class="... text-neutral-100 ...">JUDUL_LINK</span>.
+             3. URL Tampilan -> Tulis kembali linknya di bagian bawah agar pengunjung bisa melihat alamat aslinya.
+             
+             * Sistem otomatis di bawah akan membaca link tersebut dan memasang logo (YouTube, Instagram, TikTok, dll) secara instan!
+        -->
+        <div id="links-container" class="space-y-4 my-auto w-full">
+
+            <!-- LINK UTAMA: YouTube Video Utama Anda -->
+            <a href="https://youtu.be/AiWGn5fdwnQ?si=igpTfiW55BbthYur" target="_blank" class="dynamic-link bio-link-card w-full flex items-center justify-between p-4 rounded-xl cursor-pointer">
+                <div class="flex items-center gap-4 w-[90%]">
+                    <!-- Wadah Logo Deteksi Otomatis (Akan dipasang otomatis oleh JavaScript di bawah) -->
+                    <span class="logo-placeholder w-10 h-10 rounded-full bg-neutral-950 border border-neutral-800 flex items-center justify-center text-lg shrink-0">
+                        <i class="fa-solid fa-link text-neutral-500"></i>
+                    </span>
+                    <div class="truncate text-left">
+                        <!-- Label Platform Terdeteksi Otomatis -->
+                        <span class="platform-label text-[8px] font-extrabold tracking-widest text-neutral-500 block uppercase">YouTube</span>
+                        <!-- Judul Link Kustom -->
+                        <span class="text-xs sm:text-sm text-neutral-100 font-semibold tracking-wide block truncate mt-0.5">Link Video Dunia Kecil Kami Di Griya Surya Indah</span>
+                        <!-- Tampilan URL Asli -->
+                        <span class="text-[9px] text-neutral-600 font-normal tracking-wide block truncate mt-0.5">https://youtu.be/AiWGn5fdwnQ?si=igpTfiW55BbthYur</span>
+                    </div>
+                </div>
+                <span class="text-neutral-700 text-xs mr-2 shrink-0">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
+            </a>
+        </div>
+                 <!-- LINK UTAMA: YouTube Video Utama Anda -->
+                 <a href="https://youtu.be/BkeeFzNUhVg?si=8Axn5BV3Sa4aCv7N" target="_blank" class="dynamic-link bio-link-card w-full flex items-center justify-between p-4 rounded-xl cursor-pointer">
+                  <div class="flex items-center gap-4 w-[90%]">
+                      <!-- Wadah Logo Deteksi Otomatis (Akan dipasang otomatis oleh JavaScript di bawah) -->
+                      <span class="logo-placeholder w-10 h-10 rounded-full bg-neutral-950 border border-neutral-800 flex items-center justify-center text-lg shrink-0">
+                          <i class="fa-solid fa-link text-neutral-500"></i>
+                      </span>
+                      <div class="truncate text-left">
+                          <!-- Label Platform Terdeteksi Otomatis -->
+                          <span class="platform-label text-[8px] font-extrabold tracking-widest text-neutral-500 block uppercase">YouTube</span>
+                          <!-- Judul Link Kustom -->
+                          <span class="text-xs sm:text-sm text-neutral-100 font-semibold tracking-wide block truncate mt-0.5">Link Video Happy New Year 2026</span>
+                          <!-- Tampilan URL Asli -->
+                          <span class="text-[9px] text-neutral-600 font-normal tracking-wide block truncate mt-0.5">https://youtu.be/BkeeFzNUhVg?si=8Axn5BV3Sa4aCv7N</span>
+                      </div>
+                  </div>
+                  <span class="text-neutral-700 text-xs mr-2 shrink-0">
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </span>
+              </a>
+          </div>
+        <!-- FOOTER & SOSIAL MEDIA -->
+        <footer class="mt-16 pt-8 border-t border-neutral-900">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 text-center sm:text-left">
+                
+                <!-- Sisi Kiri: Follow Auraphone Records -->
+                <div class="flex flex-col items-center sm:items-start space-y-3">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-neutral-500 uppercase">Follow Auraphone Records</span>
+                    <div class="flex items-center gap-3">
+                        <a href="https://youtube.com/@auraphonerecords?si=BQItNSnkjyA9uIxZ" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-red-500 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-red-500" title="YouTube Auraphone">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@auraphone.records?is_from_webapp=1&sender_device=pc" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-neutral-200 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-white" title="TikTok Auraphone">
+                            <i class="fa-brands fa-tiktok text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/auraphonerecords?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-pink-500 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-pink-500" title="Instagram Auraphone">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan: Follow Griya Surya Indah Records -->
+                <div class="flex flex-col items-center sm:items-end space-y-3">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-neutral-500 uppercase">Follow Griya Surya Indah</span>
+                    <div class="flex items-center gap-3">
+                        <a href="https://youtube.com/@griyasuryaindahrecords-rw19?si=EGakiMIdYUmgRNf8" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-red-500 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-red-500" title="YouTube Griya Surya Indah">
+                            <i class="fa-brands fa-youtube text-base"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@griyasuryaindahrecords?is_from_webapp=1&sender_device=pc" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-neutral-200 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-white" title="TikTok Griya Surya Indah">
+                            <i class="fa-brands fa-tiktok text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/griyasuryaindahrecords?igsh=MW83MmZtZHRqa3Nkdg==" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-pink-500 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-pink-500" title="Instagram Griya Surya Indah">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                        </a>
+                        <a href="https://www.facebook.com/people/Griya-Surya-Indah-Record/pfbid02P2ZkHAPYSK5FsMFbNXk342XRXHwHXRbZTJ4PrFvJosF2ShwVJ6UXSReXg6zdZdnRl/" target="_blank" class="w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-blue-500 flex items-center justify-center transition-all duration-300 text-neutral-400 hover:text-blue-500" title="Facebook Griya Surya Indah">
+                            <i class="fa-brands fa-facebook text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HAK CIPTA / COPYRIGHT -->
+            <div class="text-center pt-8 border-t border-neutral-900/60">
+                <p class="text-[9px] text-neutral-600 font-semibold tracking-[0.25em] uppercase">
+                    © 2026 Auraphone Records
+                </p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JAVASCRIPT: SISTEM DETEKSI LOGO SOSIAL MEDIA OTOMATIS & PROTEKSI INSPECT ELEMENT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // ==========================================
+            // 1. DETEKSI LOGO MEDIA SOSIAL SECARA OTOMATIS
+            // ==========================================
+            const links = document.querySelectorAll(".dynamic-link");
+
+            links.forEach(link => {
+                const url = link.getAttribute("href").toLowerCase();
+                const logoContainer = link.querySelector(".logo-placeholder");
+                const labelContainer = link.querySelector(".platform-label");
+                
+                let iconHTML = '<i class="fa-solid fa-link text-neutral-500 text-sm"></i>';
+                let platformName = "Link";
+
+                // Memeriksa isi alamat URL untuk mencocokkan dengan logo platform yang tepat
+                if (url.includes("youtube.com") || url.includes("youtu.be")) {
+                    iconHTML = '<i class="fa-brands fa-youtube text-red-500 text-lg"></i>';
+                    platformName = "YouTube";
+                } else if (url.includes("instagram.com") || url.includes("instagr.am")) {
+                    iconHTML = '<i class="fa-brands fa-instagram text-pink-500 text-lg"></i>';
+                    platformName = "Instagram";
+                } else if (url.includes("tiktok.com")) {
+                    iconHTML = '<i class="fa-brands fa-tiktok text-white text-base"></i>';
+                    platformName = "TikTok";
+                } else if (url.includes("facebook.com") || url.includes("fb.com") || url.includes("fb.watch")) {
+                    iconHTML = '<i class="fa-brands fa-facebook text-blue-500 text-lg"></i>';
+                    platformName = "Facebook";
+                } else if (url.includes("wa.me") || url.includes("whatsapp.com")) {
+                    iconHTML = '<i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>';
+                    platformName = "WhatsApp";
+                } else if (url.includes("spotify.com")) {
+                    iconHTML = '<i class="fa-brands fa-spotify text-emerald-400 text-lg"></i>';
+                    platformName = "Spotify";
+                } else if (url.includes("soundcloud.com")) {
+                    iconHTML = '<i class="fa-brands fa-soundcloud text-orange-500 text-lg"></i>';
+                    platformName = "Soundcloud";
+                }
+
+                // Memasukkan logo dan label nama platform secara dinamis
+                if (logoContainer) {
+                    logoContainer.innerHTML = iconHTML;
+                }
+                if (labelContainer) {
+                    labelContainer.textContent = platformName;
+                }
+            });
+
+            // ==========================================
+            // 2. SISTEM KEAMANAN & ANTI-INSPECT KODE
+            // ==========================================
+            
+            // Blokir Klik Kanan pada Halaman
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            // Blokir Shortcut Keyboard untuk Alat Pengembang (Developer Tools)
+            document.addEventListener('keydown', function(e) {
+                // Blokir F12
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    return false;
+                }
+                // Blokir Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Element Selector)
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Blokir Ctrl+U (Melihat Source Code HTML)
+                if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Blokir Command+Option+I untuk Pengguna macOS / Safari
+                if (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'i')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
