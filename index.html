@@ -29,12 +29,10 @@
     </script>
 
     <style>
-        /* Gaya Premium Latar Belakang Gelap */
         body {
             background-color: #080808;
             color: #f3f4f6;
             font-family: 'Montserrat', sans-serif;
-            /* Mencegah seleksi teks secara tidak sengaja */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -48,7 +46,7 @@
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Efek Hover Hanya untuk Perangkat Desktop/Mouse (Mencegah Sticky di HP) */
+        /* Efek Hover Hanya untuk Perangkat Desktop/Mouse */
         @media (hover: hover) {
             .bio-link-card:hover {
                 border-color: rgba(255, 255, 255, 0.2);
@@ -83,7 +81,7 @@
             pointer-events: none;
         }
 
-        /* Aktif secara eksklusif menggunakan kontrol JS (.pressed) untuk menghindari bug browser mobile */
+        /* Aktif secara eksklusif menggunakan kontrol JS (.pressed) */
         .social-btn.pressed {
             transform: scale(0.95);
         }
@@ -93,7 +91,21 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white px-4 py-12 md:py-16">
+<body class="min-h-screen flex flex-col justify-between selection:bg-neutral-800 selection:text-white px-4 py-6 md:py-16">
+
+    <!-- BANNER PETUNJUK INSTAGRAM (Hanya muncul jika dibuka di dalam browser bawaan Instagram/Facebook) -->
+    <div id="instagram-helper-banner" class="hidden max-w-2xl mx-auto w-full mb-6 bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl p-4 flex items-start gap-3 relative shadow-lg">
+        <span class="text-amber-500 text-lg shrink-0 mt-0.5">
+            <i class="fa-solid fa-circle-info"></i>
+        </span>
+        <div class="text-left text-xs text-neutral-300 leading-relaxed pr-6">
+            <p class="font-bold text-amber-500 mb-1">Membuka via Instagram?</p>
+            Untuk kualitas terbaik & langsung masuk ke <span class="font-bold text-white">Aplikasi YouTube</span> Anda, ketuk ikon <span class="font-bold text-white">titik tiga (⋮ / •••)</span> di pojok kanan atas, lalu pilih <span class="font-semibold text-amber-400 underline">"Buka di Browser / Open in Browser"</span>.
+        </div>
+        <button onclick="document.getElementById('instagram-helper-banner').remove()" class="absolute top-3 right-3 text-neutral-500 hover:text-white text-xs transition-colors" title="Tutup">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
 
     <!-- KONTEN UTAMA -->
     <main class="max-w-2xl mx-auto w-full flex-1 flex flex-col justify-between">
@@ -125,7 +137,7 @@
                 </div>
             </div>
 
-            <!-- Sisi Kanan: Griya Surya Indah Records (Simetris & Seimbang) -->
+            <!-- Sisi Kanan: Griya Surya Indah Records -->
             <div class="flex items-center gap-3 w-full sm:w-auto sm:text-right sm:flex-row-reverse justify-start sm:justify-end">
                 <div class="w-14 h-14 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
                     <img src="https://lh3.googleusercontent.com/d/1gDhrBNJTkS6qiOnuDkUYDV6gj6wNQcqG" 
@@ -147,7 +159,7 @@
         <div id="links-container" class="space-y-4 my-auto w-full">
 
             <!-- LINK UTAMA: YouTube Video Utama -->
-            <a href="https://youtu.be/AiWGn5fdwnQ?si=igpTfiW55BbthYur" class="dynamic-link youtube-link bio-link-card w-full flex items-center justify-between p-4 rounded-xl cursor-pointer">
+            <a href="https://youtu.be/AiWGn5fdwnQ?si=igpTfiW55BbthYur" target="_blank" class="dynamic-link bio-link-card w-full flex items-center justify-between p-4 rounded-xl cursor-pointer">
                 <div class="flex items-center gap-4 w-[90%]">
                     <span class="logo-placeholder w-10 h-10 rounded-full bg-neutral-950 border border-neutral-800 flex items-center justify-center text-lg shrink-0">
                         <i class="fa-solid fa-link text-neutral-500"></i>
@@ -167,7 +179,7 @@
             </a>
 
             <!-- LINK UTAMA: YouTube Video Kedua -->
-            <a href="https://youtu.be/BkeeFzNUhVg?si=8Axn5BV3Sa4aCv7N" class="dynamic-link youtube-link bio-link-card w-full flex items-center justify-between p-4 rounded-xl cursor-pointer">
+            <a href="https://youtu.be/BkeeFzNUhVg?si=8Axn5BV3Sa4aCv7N" target="_blank" class="dynamic-link bio-link-card w-full flex items-center justify-between p-4 rounded-xl cursor-pointer">
                 <div class="flex items-center gap-4 w-[90%]">
                     <!-- Wadah Logo Deteksi Otomatis -->
                     <span class="logo-placeholder w-10 h-10 rounded-full bg-neutral-950 border border-neutral-800 flex items-center justify-center text-lg shrink-0">
@@ -197,7 +209,7 @@
                 <div class="flex flex-col items-center sm:items-start space-y-3">
                     <span class="text-[10px] font-bold tracking-[0.2em] text-neutral-500 uppercase">Follow Auraphone Records</span>
                     <div class="flex items-center gap-3">
-                        <a href="https://youtube.com/@auraphonerecords?si=BQItNSnkjyA9uIxZ" class="social-btn youtube-link w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-red-500 flex items-center justify-center text-neutral-400 hover:text-red-500" title="YouTube Auraphone">
+                        <a href="https://youtube.com/@auraphonerecords?si=BQItNSnkjyA9uIxZ" target="_blank" class="social-btn w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-red-500 flex items-center justify-center text-neutral-400 hover:text-red-500" title="YouTube Auraphone">
                             <i class="fa-brands fa-youtube text-base"></i>
                         </a>
                         <a href="https://www.tiktok.com/@auraphone.records?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-neutral-200 flex items-center justify-center text-neutral-400 hover:text-white" title="TikTok Auraphone">
@@ -214,7 +226,7 @@
                 <div class="flex flex-col items-center sm:items-end space-y-3">
                     <span class="text-[10px] font-bold tracking-[0.2em] text-neutral-500 uppercase">Follow Griya Surya Indah</span>
                     <div class="flex items-center gap-3">
-                        <a href="https://youtube.com/@griyasuryaindahrecords-rw19?si=EGakiMIdYUmgRNf8" class="social-btn youtube-link w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-red-500 flex items-center justify-center text-neutral-400 hover:text-red-500" title="YouTube Griya Surya Indah">
+                        <a href="https://youtube.com/@griyasuryaindahrecords-rw19?si=EGakiMIdYUmgRNf8" target="_blank" class="social-btn w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-red-500 flex items-center justify-center text-neutral-400 hover:text-red-500" title="YouTube Griya Surya Indah">
                             <i class="fa-brands fa-youtube text-base"></i>
                         </a>
                         <a href="https://www.tiktok.com/@griyasuryaindahrecords?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn w-9 h-9 rounded-full bg-neutral-950 border border-neutral-900 hover:border-neutral-200 flex items-center justify-center text-neutral-400 hover:text-white" title="TikTok Griya Surya Indah">
@@ -241,11 +253,25 @@
 
     </main>
 
-    <!-- JAVASCRIPT: SISTEM DETEKSI LOGO SOSIAL MEDIA OTOMATIS, DEEP-LINKING YOUTUBE & PROTEKSI INSPECT ELEMENT -->
+    <!-- JAVASCRIPT: DETEKSI, INTEGRASI EVENT DAN PROTEKSI KEAMANAN -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // ==========================================
-            // 1. DETEKSI LOGO MEDIA SOSIAL SECARA OTOMATIS
+            // 1. SISTEM DETEKSI IN-APP BROWSER (INSTAGRAM/FACEBOOK)
+            // ==========================================
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const isInstagram = (ua.indexOf('Instagram') > -1) || (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
+
+            if (isInstagram) {
+                // Menampilkan banner panduan jika dibuka dari dalam Instagram/Facebook
+                const banner = document.getElementById("instagram-helper-banner");
+                if (banner) {
+                    banner.classList.remove("hidden");
+                }
+            }
+
+            // ==========================================
+            // 2. DETEKSI LOGO MEDIA SOSIAL SECARA OTOMATIS
             // ==========================================
             const links = document.querySelectorAll(".dynamic-link");
 
@@ -257,7 +283,6 @@
                 let iconHTML = '<i class="fa-solid fa-link text-neutral-500 text-sm"></i>';
                 let platformName = "Link";
 
-                // Memeriksa isi alamat URL untuk mencocokkan dengan logo platform yang tepat
                 if (url.includes("youtube.com") || url.includes("youtu.be")) {
                     iconHTML = '<i class="fa-brands fa-youtube text-red-500 text-lg"></i>';
                     platformName = "YouTube";
@@ -281,7 +306,6 @@
                     platformName = "Soundcloud";
                 }
 
-                // Memasukkan logo dan label nama platform secara dinamis
                 if (logoContainer) {
                     logoContainer.innerHTML = iconHTML;
                 }
@@ -291,55 +315,11 @@
             });
 
             // ==========================================
-            // 2. SISTEM DEEP-LINKING YOUTUBE (MEMAKSA BUKA APLIKASI UTAMA)
-            // ==========================================
-            const youtubeLinks = document.querySelectorAll(".youtube-link");
-
-            youtubeLinks.forEach(link => {
-                link.addEventListener("click", function(e) {
-                    const originalUrl = link.getAttribute("href");
-                    if (!originalUrl) return;
-
-                    e.preventDefault();
-
-                    const isAndroid = /Android/i.test(navigator.userAgent);
-                    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-                    // Bersihkan skema https untuk mengemas Deep Link
-                    const cleanUrl = originalUrl.replace(/https?:\/\/(www\.)?/, "www.");
-
-                    if (isAndroid) {
-                        // Menggunakan sistem Android Intents untuk memaksa membuka aplikasi YouTube bawaan HP
-                        const intentUrl = `intent://${cleanUrl}#Intent;package=com.google.android.youtube;scheme=https;end`;
-                        window.location.href = intentUrl;
-
-                        // Fallback jika aplikasi YouTube tidak terinstall di HP pengguna
-                        setTimeout(() => {
-                            window.location.href = originalUrl;
-                        }, 1500);
-                    } else if (isIOS) {
-                        // Menggunakan skema protokol iOS resmi milik YouTube
-                        const appUrl = `youtube://${cleanUrl}`;
-                        window.location.href = appUrl;
-
-                        // Fallback jika aplikasi YouTube tidak terinstall di iPhone
-                        setTimeout(() => {
-                            window.location.href = originalUrl;
-                        }, 1500);
-                    } else {
-                        // Untuk Desktop / Laptop, buka tab baru seperti biasa
-                        window.open(originalUrl, '_blank');
-                    }
-                });
-            });
-
-            // ==========================================
             // 3. SISTEM TEKAN/KLIK SISTEMIS (BEBAS STICKY / LENGKET DI MOBILE)
             // ==========================================
             const socialBtns = document.querySelectorAll(".social-btn");
             const bioCards = document.querySelectorAll(".bio-link-card");
 
-            // Fungsi untuk mengelola class pressed tombol sosial
             socialBtns.forEach(btn => {
                 const addPressEffect = () => {
                     btn.classList.add("pressed");
@@ -347,21 +327,18 @@
 
                 const removePressEffect = () => {
                     btn.classList.remove("pressed");
-                    btn.blur(); // Menghapus focus browser yang menyisakan efek hover
+                    btn.blur();
                 };
 
-                // Untuk Komputer (Mouse)
                 btn.addEventListener("mousedown", addPressEffect);
                 btn.addEventListener("mouseup", removePressEffect);
                 btn.addEventListener("mouseleave", removePressEffect);
 
-                // Untuk Layar Sentuh / Handphone (Touch Screen) - Responsif & Langsung Hilang
                 btn.addEventListener("touchstart", addPressEffect, { passive: true });
                 btn.addEventListener("touchend", removePressEffect, { passive: true });
                 btn.addEventListener("touchcancel", removePressEffect, { passive: true });
             });
 
-            // Fungsi untuk mengelola class pressed kartu link utama
             bioCards.forEach(card => {
                 const addPressEffect = () => {
                     card.classList.add("pressed");
@@ -384,30 +361,23 @@
             // ==========================================
             // 4. SISTEM KEAMANAN & ANTI-INSPECT KODE
             // ==========================================
-            
-            // Blokir Klik Kanan pada Halaman
             document.addEventListener('contextmenu', function(e) {
                 e.preventDefault();
             });
 
-            // Blokir Shortcut Keyboard untuk Alat Pengembang (Developer Tools)
             document.addEventListener('keydown', function(e) {
-                // Blokir F12
                 if (e.key === 'F12') {
                     e.preventDefault();
                     return false;
                 }
-                // Blokir Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Element Selector)
                 if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
                     e.preventDefault();
                     return false;
                 }
-                // Blokir Ctrl+U (Melihat Source Code HTML)
                 if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
                     e.preventDefault();
                     return false;
                 }
-                // Blokir Command+Option+I untuk Pengguna macOS / Safari
                 if (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'i')) {
                     e.preventDefault();
                     return false;
